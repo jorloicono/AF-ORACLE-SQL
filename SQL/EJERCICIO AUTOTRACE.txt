@@ -1,0 +1,40 @@
+SET AUTOTRACE OFF;  
+  
+SELECT p.prod_id,p.prod_name, s.amount_sold, s.quantity_sold
+  FROM sales s, products p, customers c
+  WHERE s.prod_id = p.prod_id
+  and s.CUST_ID = c.CUST_ID
+  and s.cust_id between 2 and 5;  
+	  
+SET AUTOTRACE ON EXPLAIN;
+
+SELECT p.prod_id,p.prod_name, s.amount_sold, s.quantity_sold
+  FROM sales s, products p, customers c
+  WHERE s.prod_id = p.prod_id
+  and s.CUST_ID = c.CUST_ID
+  and s.cust_id between 2 and 5;
+
+SET AUTOTRACE ON STATISTICS;
+
+SELECT p.prod_id,p.prod_name, s.amount_sold, s.quantity_sold
+  FROM sales s, products p, customers c
+  WHERE s.prod_id = p.prod_id
+  and s.CUST_ID = c.CUST_ID
+  and s.cust_id between 2 and 5;
+
+SET AUTOTRACE ON;
+
+SELECT p.prod_id,p.prod_name, s.amount_sold, s.quantity_sold
+  FROM sales s, products p, customers c
+  WHERE s.prod_id = p.prod_id
+  and s.CUST_ID = c.CUST_ID
+  and s.cust_id between 2 and 5;
+
+SET AUTOTRACE TRACEONLY;
+
+SELECT p.prod_id,p.prod_name, s.amount_sold, s.quantity_sold
+  FROM sales s, products p, customers c
+  WHERE s.prod_id = p.prod_id
+  and s.CUST_ID = c.CUST_ID
+  and s.cust_id between 2 and 5;
+

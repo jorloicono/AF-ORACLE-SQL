@@ -1,0 +1,21 @@
+SELECT /*+ FULL(employees) */ employee_id, last_name
+ FROM employees e
+ WHERE last_name LIKE 'A%';
+
+SELECT /*+ INDEX(EMP_EMP_ID_PK) */ employee_id, last_name, department_id
+  FROM employees e
+  where e.employee_id > 120
+  and last_name like 'A%';
+
+SELECT /*+ INDEX(e EMP_EMP_ID_PK) */ employee_id, last_name, department_id
+  FROM employees e
+  where e.employee_id > 120
+  and last_name like 'A%';
+
+SELECT /*+ FIRST_ROWS(10) */ employee_id, last_name, salary, job_id
+  FROM employees
+  WHERE department_id = 20;
+
+
+
+
