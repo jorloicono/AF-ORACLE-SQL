@@ -1,0 +1,20 @@
+-------------- RUN in SH Schema----------------------
+-- Check the table statistics
+SELECT * FROM USER_TAB_STATISTICS 
+WHERE TABLE_NAME = 'SALES' and OBJECT_TYPE = 'TABLE';
+
+--check the Column and Histogram Statistics
+SELECT * FROM USER_TAB_COL_STATISTICS 
+WHERE TABLE_NAME = 'SALES';
+
+-- CHeck the HISTOGRAM Details
+SELECT * FROM USER_TAB_HISTOGRAMS 
+WHERE TABLE_NAME = 'SALES';
+
+-- Check the index statistics
+SELECT * FROM USER_IND_STATISTICS 
+WHERE TABLE_NAME = 'SALES' and OBJECT_TYPE = 'INDEX';
+
+-------------- RUN in SYS Schema----------------------
+-- Check the System Statistics
+SELECT pname, pval1 FROM sys.aux_stats$;
